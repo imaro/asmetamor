@@ -157,10 +157,7 @@ Proof of concept only!
 
 Ex.:  ndisasm -b 32 <binary_code_file> | ./%(prog)s
 
-''',
-				epilog='''\
-Attila Marosi <attila.marosi@gmail.com>
-All rights reserved!''')
+''')
 	parser.add_argument('--source', default=False, action='store_true',
                    help='ASM source code without polimorf modifications')
 	parser.add_argument('--nonop', default=False, action='store_true',
