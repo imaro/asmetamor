@@ -50,8 +50,9 @@ def getcmd(line):
 		cmd = cmd.replace('short', '')
 
 	if args.source == False:
+		# Here, you can modify the "original" command to any polymorf code 
+		
 		if args.nopush == False:		
-			# Here, you can modify the "original" command to any polymorf code 
 			if cmd.find('push dword 0x') == 0:
 				cmd = poli_push(cmd)
 
@@ -152,7 +153,9 @@ if __name__ == "__main__":
 	parser = argparse.ArgumentParser(
 				formatter_class=argparse.RawDescriptionHelpFormatter,			
 				description='''\
-Convert NDISASM output to ASM source code which can be rebuild with NASM. 
+Convert NDISASM output to ASM code. It is able to modify the code to create a metamof version. 
+Code modification works only with 32 bits - x64 in progress.
+
 Proof of concept only!
 
 Ex.:  ndisasm -b 32 <binary_code_file> | ./%(prog)s
@@ -166,8 +169,6 @@ Ex.:  ndisasm -b 32 <binary_code_file> | ./%(prog)s
                    help='No need to replace XOR $reg,$reg to MOV $reg,0x0')
 	parser.add_argument('--nopush', default=False, action='store_true',
                    help='No need to replace PUSH DWORD $value to random value and add/sub')
-	parser.add_argument('--v', default=False, action='store_true',
-                   help='Verbose. Comment all modifications in the code')
 
 	args = parser.parse_args()
 	
