@@ -1,14 +1,10 @@
 asmetamor
 =========
 
-Convert NDISASM output to ASM code. It is able to modify the code to create a metamof version.
-Code modification works only with 32 bits - x64 in progress.
-
-
 usage: asmetamorf.py [-h] [--source] [--nonop] [--noxor] [--nopush] [--v]
 
-Convert NDISASM output to ASM source code which can be rebuild with NASM. 
-Proof of concept only!
+Convert NDISASM output to ASM code. It is able to modify the code to create a metamof version. 
+Code modification works only with 32 bits - x64 in progress.
 
 Ex.:  ndisasm -b 32 <binary_code_file> | ./asmetamorf.py
 
